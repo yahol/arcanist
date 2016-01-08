@@ -6,7 +6,7 @@
 final class ArcanistCpplintLinter extends ArcanistExternalLinter {
 
   public function getLinterName() {
-    return 'CPPLINT';
+    return 'C++ Google\'s Styleguide';
   }
 
   public function getLinterConfigurationName() {
@@ -35,7 +35,7 @@ final class ArcanistCpplintLinter extends ArcanistExternalLinter {
     foreach ($lines as $line) {
       $line = trim($line);
       $matches = null;
-      $regex = '/^-:(\d+):\s*(.*)\s*\[(.*)\] \[(\d+)\]$/';
+      $regex = '/(\d+):\s*(.*)\s*\[(.*)\] \[(\d+)\]$/';
       if (!preg_match($regex, $line, $matches)) {
         continue;
       }
